@@ -10,14 +10,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: pnpm install
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Build for GitHub Pages
+        run: pnpm --filter @workspace/swatanya-wellness exec vite build --config vite.config.github.ts
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./artifacts/swatanya-wellness/dist
