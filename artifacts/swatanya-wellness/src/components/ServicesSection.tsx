@@ -1,5 +1,5 @@
 import { useLang } from '@/lib/LanguageContext';
-import { Heart, Home, Baby, AlertCircle } from 'lucide-react';
+import { Heart, AlertCircle } from 'lucide-react';
 
 const services = [
   {
@@ -10,24 +10,6 @@ const services = [
     color: 'text-orange-600',
     bg: 'bg-orange-50',
     features: ['Medication Reminders', 'Blood Pressure Monitoring', 'Doctor Visit Escort', 'Physiotherapy', 'Diet Planning', 'Lab Test Assistance'],
-  },
-  {
-    icon: Home,
-    key: 'household',
-    descKey: 'householdDesc',
-    gradient: 'gradient-green',
-    color: 'text-green-700',
-    bg: 'bg-green-50',
-    features: ['Meal Preparation', 'House Cleaning', 'Laundry & Ironing', 'Grocery Shopping', 'Bill Payment Assistance', 'Plant & Pet Care'],
-  },
-  {
-    icon: Baby,
-    key: 'nanny',
-    descKey: 'nannyDesc',
-    gradient: 'bg-gradient-to-br from-blue-500 to-blue-700',
-    color: 'text-blue-700',
-    bg: 'bg-blue-50',
-    features: ['Daily Companion', 'Personal Hygiene Help', 'Mobility Assistance', 'Emotional Support', 'Recreation Activities', 'Memory Care'],
   },
   {
     icon: AlertCircle,
@@ -45,10 +27,9 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-white relative" data-testid="section-services">
-      {/* Top divider */}
       <div className="section-divider mb-16" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4 tracking-wide uppercase">
@@ -64,7 +45,7 @@ export default function ServicesSection() {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t('servicesSubtitle')}</p>
         </div>
 
-        {/* Service cards */}
+        {/* Service cards — 2 cards centered */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((svc, idx) => {
             const Icon = svc.icon;
@@ -75,7 +56,6 @@ export default function ServicesSection() {
                 data-testid={`card-service-${svc.key}`}
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                {/* Accent top bar */}
                 <div className={`h-1.5 w-full ${svc.gradient}`} />
 
                 <div className="p-6 lg:p-8">
@@ -94,7 +74,6 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* Features list */}
                   <div className="grid grid-cols-2 gap-2">
                     {svc.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
