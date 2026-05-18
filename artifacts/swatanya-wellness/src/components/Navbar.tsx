@@ -99,7 +99,7 @@ export default function Navbar() {
 
             {/* Emergency CTA */}
             <a
-              href="tel:18001234567"
+              href="tel:7898985703"
               className="hidden sm:flex items-center gap-1.5 px-3 py-2 bg-red-50 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 transition-all duration-200 border border-red-200"
               data-testid="link-emergency"
             >
@@ -142,7 +142,7 @@ export default function Navbar() {
             ))}
             <div className="pt-2 flex gap-2">
               <a
-                href="tel:18001234567"
+                href="tel:7898985703"
                 className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-red-50 text-red-600 rounded-lg text-sm font-medium border border-red-200"
               >
                 <Phone className="w-4 h-4" /> Emergency

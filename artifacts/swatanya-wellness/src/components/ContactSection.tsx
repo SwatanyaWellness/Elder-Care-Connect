@@ -33,14 +33,14 @@ export default function ContactSection() {
             <h3 className="font-bold text-foreground text-xl mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
               {t('emergencyHotline')}
             </h3>
-            <p className="text-red-600 font-bold text-2xl mb-2">1800-SWATANYA</p>
-            <p className="text-muted-foreground text-sm mb-4">(1800-792-8269)</p>
+            <p className="text-red-600 font-bold text-2xl mb-2">7898985703</p>
+            <p className="text-muted-foreground text-sm mb-4">(7898985703)</p>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">
               <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
               {t('available24x7')}
             </span>
             <a
-              href="tel:18007928269"
+              href="tel:7898985703"
               className="mt-6 w-full py-3 bg-red-600 text-white rounded-xl font-semibold hover:bg-red-700 transition-all text-center"
               data-testid="button-call-emergency"
             >
@@ -60,7 +60,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-sm">Phone</p>
-                  <a href="tel:18007928269" className="text-primary hover:underline text-sm">{t('phone')}</a>
+                  <a href="tel:7898985703" className="text-primary hover:underline text-sm">{t('phone')}</a>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-sm">WhatsApp</p>
-                  <a href="https://wa.me/919876543210" className="text-accent hover:underline text-sm">+91 98765 43210</a>
+                  <a href="https://wa.me/917898985703" className="text-accent hover:underline text-sm">+91 78989 85703</a>
                 </div>
               </div>
 

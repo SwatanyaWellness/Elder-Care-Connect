@@ -84,7 +84,7 @@ export default function HeroSection() {
             { value: '100+', label: 'Elders Served' },
             { value: '98%', label: 'Satisfaction' },
             { value: '24hrs', label: 'Response Time' },
-            { value: '8+', label: 'Years Experience' },
+            { value: '1+', label: 'Years Experience' },
           ].map((stat, i) => (
             <div
               key={i}

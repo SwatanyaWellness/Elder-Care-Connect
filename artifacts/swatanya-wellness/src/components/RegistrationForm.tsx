@@ -206,7 +206,7 @@ export default function RegistrationForm() {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => handleChange('phone', e.target.value)}
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 78989 85703"
                   className={`w-full px-4 py-3 rounded-xl border text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/30 ${errors.phone ? 'border-destructive bg-destructive/5' : 'border-border bg-muted/30 focus:border-primary'}`}
                   data-testid="input-phone"
                 />

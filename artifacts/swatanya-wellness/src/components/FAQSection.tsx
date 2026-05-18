@@ -110,7 +110,7 @@ export default function FAQSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:18001234567"
+              href="tel:7898985703"
               className="px-6 py-3 gradient-saffron text-white rounded-xl font-semibold hover:opacity-90 transition-all"
               data-testid="button-faq-call"
             >

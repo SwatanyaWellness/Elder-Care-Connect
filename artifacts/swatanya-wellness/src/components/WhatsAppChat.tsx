@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, MessageCircle, Send } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
 
-const WHATSAPP_NUMBER = '919876543210'; // Replace with your actual WhatsApp number (country code + number, no +)
+const WHATSAPP_NUMBER = '917898985703'; // Replace with your actual WhatsApp number (country code + number, no +)
 
 const WHATSAPP_MESSAGES: Record<string, string> = {
   en: "Hello! I'm interested in Swatanya Wellness services for my elderly family member. Can you help me?",

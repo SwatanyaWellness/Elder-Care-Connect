@@ -35,10 +35,10 @@ export default function Footer() {
                 <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                 <span className="text-red-300 text-xs font-semibold uppercase tracking-wide">{t('emergencyHotline')} — {t('available24x7')}</span>
               </div>
-              <a href="tel:18007928269" className="text-white font-bold text-xl hover:text-red-300 transition-colors">
-                1800-SWATANYA
+              <a href="tel:7898985703" className="text-white font-bold text-xl hover:text-red-300 transition-colors">
+                7898985703
               </a>
-              <p className="text-background/60 text-xs mt-1">(1800-792-8269) — Free Call</p>
+              <p className="text-background/60 text-xs mt-1">(7898985703) — Free Call</p>
             </div>
 
             {/* Social Links */}
@@ -96,7 +96,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-center gap-2 text-background/60">
                   <Phone className="w-4 h-4 text-primary" />
-                  <a href="tel:18007928269" className="text-sm hover:text-primary transition-colors">
+                  <a href="tel:7898985703" className="text-sm hover:text-primary transition-colors">
                     {t('phone')}
                   </a>
                 </div>
