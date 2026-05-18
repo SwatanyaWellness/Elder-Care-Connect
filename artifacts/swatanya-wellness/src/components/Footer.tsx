@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-background/70 text-sm leading-relaxed max-w-sm mb-6">
-              {t('tagline')}. Serving over 50,000 elderly across 25+ cities in India with compassion, professionalism, and respect.
+              {t('tagline')}. Serving the elderly of Gwalior, Madhya Pradesh with compassion, professionalism, and respect.
             </p>
 
             {/* Emergency Banner */}
@@ -114,7 +114,7 @@ export default function Footer() {
             <div className="mt-6">
               <h4 className="font-bold text-background mb-4 text-sm uppercase tracking-wide">Our Services</h4>
               <ul className="space-y-2">
-                {['Healthcare Support', 'Household Assistance', 'Nanny & Companion', 'Emergency Support', 'Physiotherapy', 'Dementia Care'].map((s) => (
+                {['Healthcare Support', 'Emergency Support', 'Physiotherapy', 'Dementia Care', 'Medication Management', 'Doctor Visit Escort'].map((s) => (
                   <li key={s} className="text-sm text-background/60 flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-primary" />
                     {s}

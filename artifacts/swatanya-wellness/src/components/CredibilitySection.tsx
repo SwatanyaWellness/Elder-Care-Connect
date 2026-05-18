@@ -1,11 +1,9 @@
 import { useLang } from '@/lib/LanguageContext';
 import { useState, useEffect, useRef } from 'react';
-import { Users, MapPin, Heart, Star, Clock, Award } from 'lucide-react';
+import { Users, Star, Clock, Award } from 'lucide-react';
 
 const metrics = [
-  { icon: Users, value: 50000, suffix: '+', key: 'elders', color: 'text-orange-600', bg: 'bg-orange-50' },
-  { icon: MapPin, value: 25, suffix: '+', key: 'cities', color: 'text-green-700', bg: 'bg-green-50' },
-  { icon: Heart, value: 5000, suffix: '+', key: 'caregivers', color: 'text-blue-700', bg: 'bg-blue-50' },
+  { icon: Users, value: 100, suffix: '+', key: 'elders', color: 'text-orange-600', bg: 'bg-orange-50' },
   { icon: Star, value: 98, suffix: '%', key: 'satisfaction', color: 'text-purple-700', bg: 'bg-purple-50' },
   { icon: Clock, value: 24, suffix: 'hrs', key: 'response', color: 'text-red-600', bg: 'bg-red-50' },
   { icon: Award, value: 8, suffix: '+', key: 'years', color: 'text-amber-700', bg: 'bg-amber-50' },
@@ -52,8 +50,6 @@ function MetricCard({ metric, metricsLabel, startCount }: { metric: typeof metri
 const trustBadges = [
   { label: 'ISO 9001:2015 Certified', detail: 'Quality Management' },
   { label: 'Ministry of Health Registered', detail: 'Government Approved' },
-  { label: 'NASSCOM Member', detail: 'Tech Excellence' },
-  { label: 'CII Awarded', detail: 'Best Elder Care 2023' },
 ];
 
 export default function CredibilitySection() {
@@ -78,7 +74,7 @@ export default function CredibilitySection() {
 
   return (
     <section id="why-us" className="py-20 lg:py-28 bg-muted/30" ref={sectionRef} data-testid="section-credibility">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4 tracking-wide uppercase">
@@ -97,7 +93,7 @@ export default function CredibilitySection() {
         </div>
 
         {/* Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
           {metrics.map((m) => (
             <MetricCard key={m.key} metric={m} metricsLabel={metricsLabel} startCount={startCount} />
           ))}
@@ -108,7 +104,7 @@ export default function CredibilitySection() {
           <h3 className="text-center font-bold text-foreground text-xl mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
             Certifications & Recognition
           </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
             {trustBadges.map((badge, idx) => (
               <div
                 key={idx}
@@ -125,20 +121,15 @@ export default function CredibilitySection() {
           </div>
         </div>
 
-        {/* Featured Cities */}
+        {/* Serving City */}
         <div className="mt-12 text-center">
-          <p className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wide">Serving across major cities</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Kolkata', 'Pune', 'Ahmedabad', 'Jaipur', 'Surat'].map((city) => (
-              <span
-                key={city}
-                className="px-4 py-2 bg-white rounded-full text-sm font-medium text-foreground border border-border shadow-sm"
-                data-testid={`city-badge-${city}`}
-              >
-                {city}
-              </span>
-            ))}
-          </div>
+          <p className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wide">Proudly Serving</p>
+          <span
+            className="inline-block px-6 py-3 bg-white rounded-full text-sm font-semibold text-foreground border border-border shadow-sm"
+            data-testid="city-badge-gwalior"
+          >
+            📍 Gwalior, Madhya Pradesh
+          </span>
         </div>
       </div>
     </section>

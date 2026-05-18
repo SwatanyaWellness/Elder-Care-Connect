@@ -81,10 +81,10 @@ export default function HeroSection() {
           style={{ animationDelay: '0.4s' }}
         >
           {[
-            { value: '50,000+', label: 'Elders Served' },
-            { value: '25+', label: 'Cities' },
-            { value: '5,000+', label: 'Caregivers' },
+            { value: '100+', label: 'Elders Served' },
             { value: '98%', label: 'Satisfaction' },
+            { value: '24hrs', label: 'Response Time' },
+            { value: '8+', label: 'Years Experience' },
           ].map((stat, i) => (
             <div
               key={i}

@@ -97,29 +97,42 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Office Locations */}
+          {/* Office Location */}
           <div className="bg-white border border-border rounded-2xl p-8" data-testid="card-contact-offices">
             <h3 className="font-bold text-foreground text-xl mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Our Offices
+              Our Office
             </h3>
-            <div className="space-y-4">
-              {[
-                { city: 'Mumbai (HQ)', address: 'Andheri East, Mumbai – 400069', phone: '+91 22 4567 8900' },
-                { city: 'Delhi NCR', address: 'Connaught Place, New Delhi – 110001', phone: '+91 11 4567 8900' },
-                { city: 'Bangalore', address: 'Indiranagar, Bengaluru – 560038', phone: '+91 80 4567 8900' },
-                { city: 'Chennai', address: 'Anna Nagar, Chennai – 600040', phone: '+91 44 4567 8900' },
-              ].map((office) => (
-                <div key={office.city} className="flex items-start gap-3 pb-4 border-b border-border last:border-0 last:pb-0">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">{office.city}</p>
-                    <p className="text-xs text-muted-foreground">{office.address}</p>
-                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-xs text-primary hover:underline">{office.phone}</a>
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <MapPin className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-base mb-1">Swatanya Wellness</p>
+                <p className="text-sm text-muted-foreground">GTB Nagar, City Center</p>
+                <p className="text-sm text-muted-foreground">Gwalior, Madhya Pradesh</p>
+                <a
+                  href="https://maps.google.com/?q=GTB+Nagar+City+Center+Gwalior+Madhya+Pradesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-3 text-xs text-primary hover:underline font-semibold"
+                >
+                  <MapPin className="w-3 h-3" />
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+
+            {/* Map placeholder */}
+            <div className="mt-6 rounded-xl overflow-hidden border border-border">
+              <iframe
+                title="Office Location"
+                src="https://maps.google.com/maps?q=GTB+Nagar,+City+Center,+Gwalior,+Madhya+Pradesh&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
