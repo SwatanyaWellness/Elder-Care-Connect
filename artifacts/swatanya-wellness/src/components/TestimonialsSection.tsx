@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
             </div>
             <div className="text-left">
               <p className="font-bold text-foreground">4.9 out of 5</p>
-              <p className="text-xs text-muted-foreground">Based on 12,000+ reviews</p>
+              <p className="text-xs text-muted-foreground">Based on 100+ reviews</p>
             </div>
           </div>
         </div>
