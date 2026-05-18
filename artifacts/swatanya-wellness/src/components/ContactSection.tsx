@@ -108,10 +108,11 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="font-bold text-foreground text-base mb-1">Swatanya Wellness</p>
-                <p className="text-sm text-muted-foreground">GTB Nagar, City Center</p>
+                <p className="text-sm text-muted-foreground">G-10B, GTB Tower</p>
+                <p className="text-sm text-muted-foreground">University Road, City Centre</p>
                 <p className="text-sm text-muted-foreground">Gwalior, Madhya Pradesh</p>
                 <a
-                  href="https://maps.google.com/?q=GTB+Nagar+City+Center+Gwalior+Madhya+Pradesh"
+                  href="https://maps.google.com/?q=G-10B+GTB+Tower+University+Road+City+Centre+Gwalior+Madhya+Pradesh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 mt-3 text-xs text-primary hover:underline font-semibold"
@@ -126,7 +127,7 @@ export default function ContactSection() {
             <div className="mt-6 rounded-xl overflow-hidden border border-border">
               <iframe
                 title="Office Location"
-                src="https://maps.google.com/maps?q=GTB+Nagar,+City+Center,+Gwalior,+Madhya+Pradesh&output=embed"
+                src="https://maps.google.com/maps?q=G-10B+GTB+Tower+University+Road+City+Centre+Gwalior+Madhya+Pradesh&output=embed"
                 width="100%"
                 height="180"
                 style={{ border: 0 }}
