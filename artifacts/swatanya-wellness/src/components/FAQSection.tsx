@@ -117,7 +117,7 @@ export default function FAQSection() {
               Call Us Now
             </a>
             <a
-              href="mailto:care@swatanyawellness.in"
+              href="mailto:swatanyawellness@gmail.com"
               className="px-6 py-3 border-2 border-border text-foreground rounded-xl font-semibold hover:border-primary hover:text-primary transition-all"
               data-testid="button-faq-email"
             >

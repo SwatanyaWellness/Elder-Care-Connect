@@ -38,7 +38,6 @@ export default function Footer() {
               <a href="tel:7898985703" className="text-white font-bold text-xl hover:text-red-300 transition-colors">
                 7898985703
               </a>
-              <p className="text-background/60 text-xs mt-1">(7898985703) — Free Call</p>
             </div>
 
             {/* Social Links */}
@@ -104,7 +103,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-center gap-2 text-background/60">
                   <Mail className="w-4 h-4 text-primary" />
-                  <a href="mailto:care@swatanyawellness.in" className="text-sm hover:text-primary transition-colors">
+                  <a href="mailto:swatanyawellness@gmail.com" className="text-sm hover:text-primary transition-colors">
                     {t('email')}
                   </a>
                 </div>

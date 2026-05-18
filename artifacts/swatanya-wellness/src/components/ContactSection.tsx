@@ -70,7 +70,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-sm">Email</p>
-                  <a href="mailto:care@swatanyawellness.in" className="text-secondary hover:underline text-sm">{t('email')}</a>
+                  <a href="mailto:swatanyawellness@gmail.com" className="text-secondary hover:underline text-sm">{t('email')}</a>
                 </div>
               </div>
 
