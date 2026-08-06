@@ -19,7 +19,10 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ## Applications
 
 ### Swatanya Wellness (`artifacts/swatanya-wellness`)
+
 React + Vite frontend for an elderly care service website targeting major metro cities in India.
+
+**Preview path:** `/`
 
 **Features:**
 - Full multilingual support: English, Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Bengali, Punjabi, Urdu (11 languages)
@@ -34,6 +37,20 @@ React + Vite frontend for an elderly care service website targeting major metro 
 - Sticky navbar with emergency phone CTA
 - Warm saffron-green color theme inspired by Indian wellness culture
 - Playfair Display + Inter font pairing
+- WhatsApp chat widget
+
+**Page sections (single-page app):**
+- `Navbar` — sticky nav with language switcher and emergency CTA
+- `HeroSection` — above-the-fold intro
+- `ServicesSection` — four service categories
+- `HowItWorksSection` — step-by-step process
+- `CredibilitySection` — animated metric counters
+- `RegistrationForm` — service sign-up form
+- `TestimonialsSection` — multilingual customer testimonials
+- `FAQSection` — accordion FAQ
+- `ContactSection` — office locations and contact info
+- `Footer` — links and legal
+- `WhatsAppChat` — floating WhatsApp button
 
 **Color theme:** Warm saffron-green palette
 - Primary: Saffron orange (hsl 28 85% 45%)
@@ -44,13 +61,27 @@ React + Vite frontend for an elderly care service website targeting major metro 
 
 **GitHub Pages:** Build with `pnpm --filter @workspace/swatanya-wellness run build`. Output is in `artifacts/swatanya-wellness/dist/public/`. Set `base` in `vite.config.ts` to match your GitHub Pages repo path (e.g. `/swatanya-wellness/`).
 
+---
+
+### API Server (`artifacts/api-server`)
+
+**Preview path:** `/api`
+
+Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request/response validation and `@workspace/db` for persistence.
+
+**Current endpoints:**
+- `GET /api/healthz` — health check, returns `{ status: string }`
+
+---
+
 ## Structure
 
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
 │   ├── api-server/         # Express API server
-│   └── swatanya-wellness/  # Swatanya Wellness website
+│   ├── swatanya-wellness/  # Swatanya Wellness website
+│   └── mockup-sandbox/     # Design mockup preview server
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
@@ -81,9 +112,14 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 ### `artifacts/api-server` (`@workspace/api-server`)
 Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
 
+### `artifacts/swatanya-wellness` (`@workspace/swatanya-wellness`)
+React + Vite single-page app for the Swatanya Wellness website.
+
 ### `lib/db` (`@workspace/db`)
 Database layer using Drizzle ORM with PostgreSQL.
 
 ### `lib/api-spec` (`@workspace/api-spec`)
 Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config.
 Run codegen: `pnpm --filter @workspace/api-spec run codegen`
+
+## User Preferences
