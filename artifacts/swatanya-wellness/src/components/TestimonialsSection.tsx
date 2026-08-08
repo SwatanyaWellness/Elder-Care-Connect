@@ -4,7 +4,7 @@ import { Star, Quote } from 'lucide-react';
 const testimonials = [
   {
     name: 'Rajan Mehta',
-    city: 'Mumbai',
+    city: 'Gwalior',
     service: 'Healthcare Support',
     rating: 5,
     text: 'After my father\'s stroke, we were desperate for quality care. Swatanya Wellness sent us a trained nurse within 24 hours. The care has been exceptional — medication on time, physiotherapy twice a week. Dad is recovering faster than expected.',
@@ -22,39 +22,21 @@ const testimonials = [
   },
   {
     name: 'Lakshmi Krishnaswamy',
-    city: 'Chennai',
+    city: 'Gwalior',
     service: 'Companion Care',
     rating: 5,
     text: 'Amma was lonely after Appa passed away. The companion from Swatanya Wellness is like family now. She reads to Amma, takes her for walks, and keeps her mentally active. We cannot imagine life without this service.',
     avatar: 'LK',
-    lang: 'Tamil',
+    lang: 'English',
   },
   {
     name: 'Ashok Patil',
-    city: 'Pune',
+    city: 'Gwalior',
     service: 'Emergency Support',
     rating: 5,
     text: 'At 2 AM, my father-in-law had a heart attack. One call to Swatanya Wellness and within 15 minutes, an emergency responder was at our door. The hospital coordination was seamless. They truly saved his life.',
     avatar: 'AP',
-    lang: 'Marathi',
-  },
-  {
-    name: 'ডঃ অনিতা বসু',
-    city: 'কলকাতা',
-    service: 'সব সেবা',
-    rating: 5,
-    text: 'আমি ডাক্তার হয়েও সবসময় বাবা-মায়ের জন্য সঠিক যত্ন নিশ্চিত করতে পারতাম না। স্বতন্ত্র ওয়েলনেস সেই দায়িত্ব নিয়েছে। তাদের প্রশিক্ষিত কর্মীরা সত্যিই যত্নশীল।',
-    avatar: 'AB',
-    lang: 'Bengali',
-  },
-  {
-    name: 'Gurpreet Singh',
-    city: 'Chandigarh',
-    service: 'All Services',
-    rating: 5,
-    text: 'My parents are 80+ and live in Chandigarh while I am in Canada. Swatanya Wellness gives me peace of mind knowing they are well taken care of. Weekly reports, 24/7 emergency line — absolutely worth every rupee.',
-    avatar: 'GS',
-    lang: 'Punjabi',
+    lang: 'English',
   },
 ];
 

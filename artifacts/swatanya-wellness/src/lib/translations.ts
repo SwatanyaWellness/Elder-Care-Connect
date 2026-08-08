@@ -19,7 +19,7 @@ export const translations: Record<Language, Record<string, string>> = {
     brand: 'Swatanya Wellness',
     tagline: 'Compassionate Care for Your Loved Ones',
     heroTitle: 'Dignity, Care & Comfort for Every Elder',
-    heroSubtitle: 'We bring professional healthcare and emergency services right to your doorstep in Gwalior, Madhya Pradesh.',
+    heroSubtitle: 'We bring professional healthcare and support services during emergency to your doorstep in Gwalior, Madhya Pradesh.',
     getStarted: 'Get Started Today',
     learnMore: 'Learn More',
     ourServices: 'Our Services',
@@ -47,7 +47,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'City',
     duration: 'Service Duration',
     durations: {
-      weekly: 'Weekly (7 days)',
       monthly: 'Monthly (30 days)',
       quarterly: 'Quarterly (3 months)',
       yearly: 'Annual (1 year)',
@@ -135,7 +134,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'शहर',
     duration: 'सेवा अवधि',
     durations: {
-      weekly: 'साप्ताहिक (7 दिन)',
       monthly: 'मासिक (30 दिन)',
       quarterly: 'त्रैमासिक (3 माह)',
       yearly: 'वार्षिक (1 वर्ष)',
@@ -223,7 +221,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'நகரம்',
     duration: 'சேவை காலம்',
     durations: {
-      weekly: 'வாராந்திர (7 நாட்கள்)',
       monthly: 'மாதாந்திர (30 நாட்கள்)',
       quarterly: 'காலாண்டு (3 மாதங்கள்)',
       yearly: 'வருடாந்திர (1 வருடம்)',
@@ -311,7 +308,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'నగరం',
     duration: 'సేవా కాలం',
     durations: {
-      weekly: 'వారానికి (7 రోజులు)',
       monthly: 'నెలవారీ (30 రోజులు)',
       quarterly: 'త్రైమాసిక (3 నెలలు)',
       yearly: 'వార్షిక (1 సంవత్సరం)',
@@ -399,7 +395,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'ನಗರ',
     duration: 'ಸೇವೆಯ ಅವಧಿ',
     durations: {
-      weekly: 'ಸಾಪ್ತಾಹಿಕ (7 ದಿನಗಳು)',
       monthly: 'ಮಾಸಿಕ (30 ದಿನಗಳು)',
       quarterly: 'ತ್ರೈಮಾಸಿಕ (3 ತಿಂಗಳು)',
       yearly: 'ವಾರ್ಷಿಕ (1 ವರ್ಷ)',
@@ -487,7 +482,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'നഗരം',
     duration: 'സേവന കാലാവധി',
     durations: {
-      weekly: 'ആഴ്ചതോറും (7 ദിവസം)',
       monthly: 'മാസം തോറും (30 ദിവസം)',
       quarterly: 'ത്രൈമാസം (3 മാസം)',
       yearly: 'വാർഷിക (1 വർഷം)',
@@ -575,7 +569,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'शहर',
     duration: 'सेवेचा कालावधी',
     durations: {
-      weekly: 'साप्ताहिक (7 दिवस)',
       monthly: 'मासिक (30 दिवस)',
       quarterly: 'त्रैमासिक (3 महिने)',
       yearly: 'वार्षिक (1 वर्ष)',
@@ -663,7 +656,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'શહેર',
     duration: 'સેવા અવધિ',
     durations: {
-      weekly: 'સાપ્તાહિક (7 દિવસ)',
       monthly: 'માસિક (30 દિવસ)',
       quarterly: 'ત્રિ-માસિક (3 મહિના)',
       yearly: 'વાર્ષિક (1 વર્ષ)',
@@ -751,7 +743,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'শহর',
     duration: 'পরিষেবার মেয়াদ',
     durations: {
-      weekly: 'সাপ্তাহিক (৭ দিন)',
       monthly: 'মাসিক (৩০ দিন)',
       quarterly: 'ত্রৈমাসিক (৩ মাস)',
       yearly: 'বার্ষিক (১ বছর)',
@@ -839,7 +830,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'ਸ਼ਹਿਰ',
     duration: 'ਸੇਵਾ ਦੀ ਮਿਆਦ',
     durations: {
-      weekly: 'ਹਫਤਾਵਾਰੀ (7 ਦਿਨ)',
       monthly: 'ਮਾਸਿਕ (30 ਦਿਨ)',
       quarterly: 'ਤਿਮਾਹੀ (3 ਮਹੀਨੇ)',
       yearly: 'ਸਾਲਾਨਾ (1 ਸਾਲ)',
@@ -927,7 +917,6 @@ export const translations: Record<Language, Record<string, string>> = {
     city: 'شہر',
     duration: 'خدمت کی مدت',
     durations: {
-      weekly: 'ہفتہ وار (7 دن)',
       monthly: 'ماہانہ (30 دن)',
       quarterly: 'سہ ماہی (3 ماہ)',
       yearly: 'سالانہ (1 سال)',

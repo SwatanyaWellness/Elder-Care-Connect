@@ -17,19 +17,15 @@ const faqs = [
   },
   {
     question: 'Do you provide services in regional languages?',
-    answer: 'Yes! We match caregivers based on language preference. We have caregivers fluent in Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Bengali, Punjabi, Urdu, and many more regional languages.',
+    answer: 'Yes! We match caregivers based on language preference. We have caregivers fluent in Hindi and English.',
   },
   {
     question: 'What is the minimum service duration?',
-    answer: 'Our minimum service duration is 7 days (weekly plan). We offer flexible packages including weekly, monthly, quarterly, and annual plans. For long-term care, we recommend our monthly or annual plans for better rates.',
+    answer: 'Our minimum service duration is 30 days (monthly plan). We offer flexible packages including monthly, quarterly, and annual plans. For long-term care, we recommend our monthly or annual plans for better rates.',
   },
   {
     question: 'How is emergency support handled at night?',
     answer: 'Our emergency hotline is operational 24/7, 365 days a year. Night emergencies are handled by our trained on-call response team. We coordinate with nearest hospitals, dispatch ambulances, and notify family members immediately.',
-  },
-  {
-    question: 'What government IDs are accepted for registration?',
-    answer: 'We accept Aadhaar Card, PAN Card, Passport, Voter ID Card, and Driving License. The ID is required for security verification and to ensure the safety of both the elder and the caregiver.',
   },
   {
     question: 'Is photo verification mandatory?',
@@ -41,7 +37,7 @@ const faqs = [
   },
   {
     question: 'Which cities do you currently serve?',
-    answer: 'We currently serve Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Kolkata, Pune, Ahmedabad, Jaipur, Surat, and 15+ more cities across India. We are rapidly expanding — contact us if your city is not listed.',
+    answer: 'We currently serve Gwalior, Madhya Pradesh and are rapidly expanding — contact us if your city is not listed.',
   },
 ];
 
