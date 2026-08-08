@@ -32,7 +32,7 @@ export default function HeroSection() {
         {/* Trust badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium mb-8 animate-fade-in-up">
           <Shield className="w-4 h-4" />
-          India's Most Trusted Elderly Care Service
+          Gwalior's Most Trusted Elderly Care Service
         </div>
 
         {/* Main headline */}
