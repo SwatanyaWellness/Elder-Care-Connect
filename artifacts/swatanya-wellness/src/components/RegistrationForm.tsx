@@ -42,8 +42,7 @@ export default function RegistrationForm() {
 
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
 
-  const langData = translations[lang] as Record<string, unknown>;
-  const cities = (langData['cities'] as string[]) || translations['en']['cities'];
+  const cities = translations[lang].cities;
   const idTypes = tNested('idTypes');
   const serviceTypes = tNested('serviceTypes');
   const durations = tNested('durations');

@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { Language, translations } from './translations';
+import { createContext, useContext, useState, type ReactNode } from 'react';
+import { translations, type Language } from './translations';
 
 interface LanguageContextType {
   lang: Language;
@@ -19,21 +19,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>('en');
 
   const t = (key: string): string => {
-    const dict = translations[lang] as Record<string, unknown>;
-    const val = dict[key];
+    const val = translations[lang][key as keyof typeof translations.en];
     if (typeof val === 'string') return val;
-    const en = translations['en'] as Record<string, unknown>;
-    const fallback = en[key];
+    const fallback = translations.en[key as keyof typeof translations.en];
     if (typeof fallback === 'string') return fallback;
     return key;
   };
 
   const tNested = (key: string): Record<string, string> => {
-    const dict = translations[lang] as Record<string, unknown>;
-    const val = dict[key];
+    const val = translations[lang][key as keyof typeof translations.en];
     if (val && typeof val === 'object' && !Array.isArray(val)) return val as Record<string, string>;
-    const en = translations['en'] as Record<string, unknown>;
-    const fallback = en[key];
+    const fallback = translations.en[key as keyof typeof translations.en];
     if (fallback && typeof fallback === 'object' && !Array.isArray(fallback)) return fallback as Record<string, string>;
     return {};
   };

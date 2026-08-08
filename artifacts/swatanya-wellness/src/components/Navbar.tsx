@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLang } from '@/lib/LanguageContext';
-import { LANGUAGES, Language } from '@/lib/translations';
+import { LANGUAGES, type Language } from '@/lib/translations';
 import { Menu, X, Globe, Phone } from 'lucide-react';
 
 export default function Navbar() {
@@ -85,7 +85,7 @@ export default function Navbar() {
                   {LANGUAGES.map((l) => (
                     <button
                       key={l.code}
-                      onClick={() => { setLang(l.code as Language); setLangOpen(false); }}
+                       onClick={() => { setLang(l.code as Language); setLangOpen(false); }}
                       className={`w-full text-left px-4 py-2.5 text-sm hover:bg-primary/5 transition-colors ${lang === l.code ? 'text-primary font-semibold bg-primary/5' : 'text-foreground'}`}
                       data-testid={`button-lang-${l.code}`}
                     >

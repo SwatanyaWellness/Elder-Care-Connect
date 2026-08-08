@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -271,7 +269,7 @@ html {
   height: 1px;
 }
 
-/* RTL support for Hindi/Urdu */
+/* Keep Hindi text aligned with the main document direction. */
 [dir="rtl"] {
   text-align: right;
 }

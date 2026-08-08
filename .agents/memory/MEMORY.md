@@ -1,0 +1,1 @@
+- [Frontend build workflow](frontend-build-workflow.md) — direct Vite builds need workflow-provided PORT and BASE_PATH; use the managed website workflow for runtime verification.

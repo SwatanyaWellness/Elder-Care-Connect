@@ -25,7 +25,7 @@ React + Vite frontend for an elderly care service website targeting major metro 
 **Preview path:** `/`
 
 **Features:**
-- Full multilingual support: English, Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Bengali, Punjabi, Urdu (11 languages)
+- Multilingual support for English and Hindi
 - Language switcher in navbar with native script labels
 - Service sections: Healthcare, Household Chores, Nanny Support, Emergency Support
 - Registration form with: name, age, government ID, service type, photo upload, address, city, duration
