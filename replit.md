@@ -1,153 +1,125 @@
-# Swatanya Wellness
+# Workspace
 
-## Project overview
+## Overview
 
-Swatanya Wellness is a React + Vite single-page website for elderly care services in Gwalior, Madhya Pradesh. The site provides service information, a multilingual English/Hindi experience, caregiver registration, testimonials, FAQs, contact details, and a WhatsApp contact widget.
+pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
-The live website is the deployable artifact at `artifacts/swatanya-wellness` and is served at the root preview path `/`.
+## Stack
 
-## Technology
+- **Monorepo tool**: pnpm workspaces
+- **Node.js version**: 24
+- **Package manager**: pnpm
+- **TypeScript version**: 5.9
+- **API framework**: Express 5
+- **Database**: PostgreSQL + Drizzle ORM
+- **Validation**: Zod (`zod/v4`), `drizzle-zod`
+- **API codegen**: Orval (from OpenAPI spec)
+- **Build**: esbuild (CJS bundle)
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS v4
-- Wouter for the single-page route
-- Lucide React for icons
-- pnpm workspace package management
+## Applications
 
-## Website features
+### Swatanya Wellness (`artifacts/swatanya-wellness`)
 
-- English and Hindi language switching
-- Responsive navigation with mobile menu
-- Hero section with calls to action and trust metrics
-- Healthcare, household, nanny, and emergency service information
-- Step-by-step care process
-- Animated credibility metrics
-- Caregiver registration form with validation
-- Government ID, city, duration, and photo fields
-- Google Forms submission hook in the registration form
-- English and Hindi family testimonials
-- FAQ accordion
-- Emergency hotline and contact information
-- Floating WhatsApp chat panel
-- Custom saffron, green, and cream visual theme
+React + Vite frontend for an elderly care service website targeting major metro cities in India.
 
-## Website folder and file reference
+**Preview path:** `/`
+
+**Features:**
+- Multilingual support for English and Hindi
+- Language switcher in navbar with native script labels
+- Service sections: Healthcare, Household Chores, Nanny Support, Emergency Support
+- Registration form with: name, age, government ID, service type, photo upload, address, city, duration
+- Google Forms integration (no-cors POST) for backend data capture
+- Credibility section with animated count-up metrics
+- Testimonials in multiple Indian languages
+- Full FAQ accordion
+- Contact section with office locations and emergency hotline
+- Sticky navbar with emergency phone CTA
+- Warm saffron-green color theme inspired by Indian wellness culture
+- Playfair Display + Inter font pairing
+- WhatsApp chat widget
+
+**Page sections (single-page app):**
+- `Navbar` — sticky nav with language switcher and emergency CTA
+- `HeroSection` — above-the-fold intro
+- `ServicesSection` — four service categories
+- `HowItWorksSection` — step-by-step process
+- `CredibilitySection` — animated metric counters
+- `RegistrationForm` — service sign-up form
+- `TestimonialsSection` — multilingual customer testimonials
+- `FAQSection` — accordion FAQ
+- `ContactSection` — office locations and contact info
+- `Footer` — links and legal
+- `WhatsAppChat` — floating WhatsApp button
+
+**Color theme:** Warm saffron-green palette
+- Primary: Saffron orange (hsl 28 85% 45%)
+- Secondary: Wellness green (hsl 145 45% 42%)
+- Background: Warm cream (hsl 42 33% 97%)
+
+**Google Forms:** The form POSTs to Google Forms via no-cors mode. Replace `GOOGLE_FORM_URL` in `RegistrationForm.tsx` with the actual Google Forms action URL and update `entry.*` field names to match your form fields.
+
+**GitHub Pages:** Build with `pnpm --filter @workspace/swatanya-wellness run build`. Output is in `artifacts/swatanya-wellness/dist/public/`. Set `base` in `vite.config.ts` to match your GitHub Pages repo path (e.g. `/swatanya-wellness/`).
+
+---
+
+### API Server (`artifacts/api-server`)
+
+**Preview path:** `/api`
+
+Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request/response validation and `@workspace/db` for persistence.
+
+**Current endpoints:**
+- `GET /api/healthz` — health check, returns `{ status: string }`
+
+---
+
+## Structure
 
 ```text
-artifacts/swatanya-wellness/
-├── .replit-artifact/
-│   └── artifact.toml
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── ContactSection.tsx
-│   │   ├── CredibilitySection.tsx
-│   │   ├── FAQSection.tsx
-│   │   ├── Footer.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── HowItWorksSection.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── RegistrationForm.tsx
-│   │   ├── ServicesSection.tsx
-│   │   ├── TestimonialsSection.tsx
-│   │   └── WhatsAppChat.tsx
-│   ├── lib/
-│   │   ├── LanguageContext.tsx
-│   │   └── translations.ts
-│   ├── pages/
-│   │   └── not-found.tsx
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
-├── .replit-artifact/artifact.toml
-├── index.html
-├── package.json
+artifacts-monorepo/
+├── artifacts/              # Deployable applications
+│   ├── api-server/         # Express API server
+│   ├── swatanya-wellness/  # Swatanya Wellness website
+│   └── mockup-sandbox/     # Design mockup preview server
+├── lib/                    # Shared libraries
+│   ├── api-spec/           # OpenAPI spec + Orval codegen config
+│   ├── api-client-react/   # Generated React Query hooks
+│   ├── api-zod/            # Generated Zod schemas from OpenAPI
+│   └── db/                 # Drizzle ORM schema + DB connection
+├── scripts/                # Utility scripts
+├── pnpm-workspace.yaml
+├── tsconfig.base.json
 ├── tsconfig.json
-└── vite.config.ts
+└── package.json
 ```
 
-### Root files
+## TypeScript & Composite Projects
 
-- `index.html` — HTML shell loaded by Vite. Sets the page title, viewport, favicon, font preconnects, root element, and React entry script.
-- `package.json` — Website package name, development/build/serve/typecheck commands, and the small set of dependencies required by the website.
-- `tsconfig.json` — TypeScript settings for the website. It includes only `src` and has no dependency on the unused workspace API libraries.
-- `vite.config.ts` — Vite, React, Tailwind, path alias, development server, preview server, and production output configuration. It reads `PORT` and `BASE_PATH` from the managed artifact workflow.
-- `.replit-artifact/artifact.toml` — Replit artifact registration, root preview path, managed web service, development command, production build command, static output directory, and SPA rewrite.
+Every package extends `tsconfig.base.json` which sets `composite: true`. The root `tsconfig.json` lists all packages as project references.
 
-### Public files
+- **Always typecheck from the root** — run `pnpm run typecheck`
+- **`emitDeclarationOnly`** — we only emit `.d.ts` files during typecheck
+- **Project references** — when package A depends on package B, A's `tsconfig.json` must list B in its `references` array.
 
-- `public/favicon.svg` — Browser tab icon referenced by `index.html`.
+## Root Scripts
 
-### Application entry files
+- `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages
+- `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
-- `src/main.tsx` — Creates the React root and imports the global stylesheet.
-- `src/App.tsx` — Creates the page shell, configures the root Wouter route, mounts all website sections in order, and provides the language context.
-- `src/index.css` — Tailwind import, theme tokens, typography, palette, shadows, animations, gradients, and global layout styles.
+## Packages
 
-### Page components
+### `artifacts/api-server` (`@workspace/api-server`)
+Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
 
-- `src/components/Navbar.tsx` — Sticky desktop/mobile navigation, English/Hindi selector, emergency phone link, and registration CTA.
-- `src/components/HeroSection.tsx` — Main introduction, primary actions, trust badge, and top-level statistics.
-- `src/components/ServicesSection.tsx` — Presents the four care service categories and links visitors toward registration.
-- `src/components/HowItWorksSection.tsx` — Explains the three-step registration, caregiver matching, and care-start process.
-- `src/components/CredibilitySection.tsx` — Displays animated service metrics and trust indicators.
-- `src/components/RegistrationForm.tsx` — Collects caregiver-service requests, validates fields, handles photo selection, and submits form data to Google Forms.
-- `src/components/TestimonialsSection.tsx` — Displays family testimonials and the overall rating summary.
-- `src/components/FAQSection.tsx` — Provides expandable answers to common service questions.
-- `src/components/ContactSection.tsx` — Shows emergency contact actions, email, phone, office information, and availability.
-- `src/components/Footer.tsx` — Displays branding, contact details, navigation links, social links, and legal links.
-- `src/components/WhatsAppChat.tsx` — Provides the floating WhatsApp button, greeting bubble, quick replies, and WhatsApp launch actions in English and Hindi.
+### `artifacts/swatanya-wellness` (`@workspace/swatanya-wellness`)
+React + Vite single-page app for the Swatanya Wellness website.
 
-### Shared application files
+### `lib/db` (`@workspace/db`)
+Database layer using Drizzle ORM with PostgreSQL.
 
-- `src/lib/LanguageContext.tsx` — Stores the active language, exposes `setLang`, and provides `t`/`tNested` lookup helpers to all components.
-- `src/lib/translations.ts` — The only translation data file. It defines the `en` and `hi` language types, selector labels, and all English/Hindi copy used by the site.
-- `src/pages/not-found.tsx` — Fallback page rendered by the router for unknown paths.
+### `lib/api-spec` (`@workspace/api-spec`)
+Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config.
+Run codegen: `pnpm --filter @workspace/api-spec run codegen`
 
-## Deliberately removed website files
-
-The following were removed because the live website does not use them:
-
-- Unused generated UI component scaffold under `src/components/ui/`
-- Unused toast and mobile helper files under `src/hooks/`
-- Unused class-name utility under `src/lib/utils.ts`
-- Unused `components.json` generator configuration
-- Unused GitHub Pages-specific `vite.config.github.ts`
-- Unused GitHub Pages `public/404.html`
-- Unused `public/opengraph.jpg`
-- Unused `@assets` Vite alias
-- Unused API client project reference from the website TypeScript configuration
-- Unused UI, charting, form, animation, and Radix dependencies from the website package
-
-No test files, demo files, mock data files, or unused UI scaffold files are retained inside the website artifact.
-
-## Configuration values to update
-
-### Google Forms
-
-`src/components/RegistrationForm.tsx` contains the `GOOGLE_FORM_URL` constant and the `entry.*` field names. Replace the placeholder form URL and field names with the real Google Forms submission endpoint before using the form in production.
-
-### WhatsApp
-
-`src/components/WhatsAppChat.tsx` contains the `WHATSAPP_NUMBER` constant. Keep it in international format without the plus sign.
-
-## Commands
-
-Run these from the workspace root:
-
-```bash
-pnpm --filter @workspace/swatanya-wellness run typecheck
-pnpm --filter @workspace/swatanya-wellness run dev
-pnpm --filter @workspace/swatanya-wellness run build
-```
-
-The managed website workflow supplies `PORT` and `BASE_PATH` for development and production configuration.
-
-## Other workspace artifacts
-
-The workspace may still contain separately registered API and Canvas preview artifacts created by the Replit environment. They are not imported by, required by, or included in the Swatanya Wellness website. The website can be maintained and deployed independently using the files documented above.
-
-## User preferences
+## User Preferences
