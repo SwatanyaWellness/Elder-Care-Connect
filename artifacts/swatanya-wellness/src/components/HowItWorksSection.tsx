@@ -105,7 +105,7 @@ export default function HowItWorksSection() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-muted/40 rounded-2xl p-6 border border-border">
             <div className="text-left">
               <p className="font-bold text-foreground">Ready to get started?</p>
-              <p className="text-sm text-muted-foreground">Join 500+ families who trust Swatanya Wellness</p>
+              <p className="text-sm text-muted-foreground">Join 50,000+ families who trust Swatanya Wellness</p>
             </div>
             <a
               href="#register"
