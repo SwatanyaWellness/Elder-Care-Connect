@@ -29,12 +29,15 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build for GitHub Pages
-        run: pnpm --filter @workspace/swatanya-wellness exec vite build --config vite.config.github.ts
+        run: pnpm --filter @workspace/swatanya-wellness run build
+        env:
+          PORT: 4173
+          BASE_PATH: /Elder-Care-Connect/
 
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./artifacts/swatanya-wellness/dist
+          path: ./artifacts/swatanya-wellness/dist/public
 
   deploy:
     needs: build
